@@ -18,6 +18,7 @@
 
     --font-weight-task:400;
     --font-weight-h1:500;
+    --font-weight-figcaption: 600;
 
     --font-height-h1:36px;
     --font-height-task:22px;
@@ -177,8 +178,44 @@ h2 {
     margin-top: 4px;
     margin-bottom: 0;    
 }
+
+/* Feeling part */
 .feeling {
     grid-area: feeling;
+}
+.feeling ul {
+    padding-left: -8px;
+    padding-right: -8px;
+    list-style: none;
+    padding-left: 0;
+    flex-wrap: wrap;
+    row-gap: 16px;
+}
+.feeling ul li {
+    width: 33.3333%;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.feeling ul li figure {
+    margin: 0;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+.feeling ul li figure img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.feeling ul li figure figcaption {
+    font-weight: var(--font-weight-figcaption);
+    font-size:var(--font-weight-figcaption) ;
+    line-height:var(--font-height-task) ;
+    margin-top: 6px;
+    /* margin-bottom: 8px; */
+    color: var(--font-color);
 }
 /* Quote Part */
 .quote {
@@ -201,7 +238,6 @@ h2 {
     font-weight:var(--font-weight-h1) ;
     line-height:var(--font-height-sub) ;
     color: var(--font-color-sub);
-    /* background-color: blue; */
 }
 /* news part */
 .news {
