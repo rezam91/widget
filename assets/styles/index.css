@@ -1,6 +1,7 @@
 :root {
     --bg-color:#292929;
     --bg-sections:#3D3D3D;
+    
 
     --b-radius:16px;
 
@@ -9,6 +10,8 @@
     --border1-color:#FFC453;
     --border2-color:#29E489;
     --quote-color:#FFFFFFCC;
+    --nav-color:#242424;
+    --hero-p:#00000063;
 
     --font-size-h1:28px;
     --font-size-sub:12px;
@@ -24,6 +27,7 @@
     --font-height-task:22px;
     --font-height-quote:32px;
     --font-height-sub:16px;
+    --font-height-p:26px;
 }
 * {
     box-sizing: border-box;
@@ -42,7 +46,7 @@ body {
 }
 .container {
     width: 1280px;
-    background-color: blue;
+    /* background-color: blue; */
     margin-top: 93px;
     margin-left: auto;
     margin-right: auto;
@@ -65,7 +69,7 @@ body {
     border-radius: var(--b-radius);
     background-color: var(--bg-sections);
     padding: var(--b-radius);
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .weather {
     grid-area: weather;
@@ -121,6 +125,7 @@ h2 {
     color: var(--font-color-sub);
 }
 .today ul {
+    margin-top: 12px;
     list-style: none;
     padding-left: 0;
 }
@@ -242,5 +247,48 @@ h2 {
 /* news part */
 .news {
     grid-area: news;
-    /* width: 1000px; */
+}
+.news input {
+    display: none;
+}
+.news nav {
+    gap: 10px;
+    margin-top: 8px;
+}
+.news label {
+    padding:8px 16px ;
+    border-radius: 4px;
+    color: var(--nav-color);
+    font-size:var(--font-size-task) ;
+    font-weight:var(--font-weight-figcaption) ;
+    line-height:var(--font-height-task) ;
+    cursor: pointer;
+}
+.news input:checked ~ label {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+.news .hero{
+    height: 320px;
+    margin-top: 24px;
+    border-radius: 8px;
+    background: url(../images/hero-gaming.jpg);
+    /* background: url(../images/crypto2.jpg); */
+    /* background: url(../images/tech.jpg); */
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    padding-top:204px ;
+}
+.news .hero p {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 16px;
+    background-color: var(--hero-p);
+    font-size:var(--font-quote) ;
+    font-weight:var(--font-weight-task) ;
+    line-height:var(--font-height-p) ;
+    color: var(--font-color);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
 }
