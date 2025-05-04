@@ -8,9 +8,11 @@
     --font-color-sub:#FFFFFF66;
     --border1-color:#FFC453;
     --border2-color:#29E489;
+    --quote-color:#FFFFFFCC;
 
     --font-size-h1:28px;
     --font-size-sub:12px;
+    --font-quote:20px;
     --font-size-task:16px;
     --font-size-h2:24px;
 
@@ -19,6 +21,7 @@
 
     --font-height-h1:36px;
     --font-height-task:22px;
+    --font-height-quote:32px;
     --font-height-sub:16px;
 }
 * {
@@ -46,8 +49,8 @@ body {
 .widget {
     width: 100%;
     display: grid;
-    grid-template-rows:178fr 210fr 266fr;
-    grid-template-columns:416fr 489fr 343fr ;
+    grid-template-rows:178px 210px 266px;
+    grid-template-columns:416px 489px 343px ;
     grid-template-areas: 
     "weather news news"
     "today news news"
@@ -159,10 +162,12 @@ h2 {
 }
 .email ul li {
     align-items: center;
-    /* width: 300px; */
 }
 .email ul li div {
     padding-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .e-subj {
     font-size: var(--font-size-task);
@@ -170,16 +175,35 @@ h2 {
     line-height: var(--font-height-task);
     color: var(--font-color);
     margin-top: 4px;
-    margin-bottom: 0;
-    text-wrap: nowrap;
-    text-overflow: hidden;
+    margin-bottom: 0;    
 }
 .feeling {
     grid-area: feeling;
 }
+/* Quote Part */
 .quote {
     grid-area: quote;
 }
+.quote div {
+    /* background-color: green; */
+    margin-top: 29px;
+    font-size:var(--font-quote) ;
+    font-weight:var(--font-weight-h1) ;
+    line-height:var(--font-height-quote) ;
+    color: var(--quote-color);
+    /* padding: 0; */
+}
+.quote div span {
+    text-align: right;
+    display: block;
+    margin-top: 0;
+    font-size:var(--font-size-sub) ;
+    font-weight:var(--font-weight-h1) ;
+    line-height:var(--font-height-sub) ;
+    color: var(--font-color-sub);
+    /* background-color: blue; */
+}
+/* news part */
 .news {
     grid-area: news;
     /* width: 1000px; */
