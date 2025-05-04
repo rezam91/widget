@@ -27,6 +27,9 @@
 img {
     display: block;
 }
+.row {
+    display: flex;
+}
 body {
     background-color:var(--bg-color);
     margin: 0;
@@ -98,7 +101,7 @@ body {
 .today div{
     margin-top: 8px;
 }
-.today h2 {
+h2 {
     margin-top: 0;
     margin-bottom: 0;
     font-size:var(--font-size-h2) ;
@@ -106,7 +109,7 @@ body {
     font-weight:var(--font-weight-h1) ;
     color: var(--font-color);
 }
-.today .p-sub {
+.p-sub {
     margin-top: 0;
     margin-bottom: 0;
     font-size: var(--font-size-sub);
@@ -143,8 +146,33 @@ body {
     margin-top: 0;
     margin-bottom: 4px;
 }
+
+/* email part */
 .email {
     grid-area: email;
+}
+.email ul {
+    list-style: none;
+    padding-left: 0;
+    flex-direction: column;
+    gap: 6px;
+}
+.email ul li {
+    align-items: center;
+    /* width: 300px; */
+}
+.email ul li div {
+    padding-left: 12px;
+}
+.e-subj {
+    font-size: var(--font-size-task);
+    font-weight: var(--font-weight-task);
+    line-height: var(--font-height-task);
+    color: var(--font-color);
+    margin-top: 4px;
+    margin-bottom: 0;
+    text-wrap: nowrap;
+    text-overflow: hidden;
 }
 .feeling {
     grid-area: feeling;
