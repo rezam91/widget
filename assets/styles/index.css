@@ -1,3 +1,20 @@
+:root {
+    --bg-color:#292929;
+    --bg-sections:#3D3D3D;
+
+    --b-radius:16px;
+
+    --font-color: #FFFFFF;
+    --font-color-sub:#FFFFFF66;
+
+    --font-size-h1:28px;
+    --font-size-sub:12px;
+
+    --font-weight-h1:500;
+
+    --font-height-h1:36px;
+    --font-height-sub:16px;
+}
 * {
     box-sizing: border-box;
 }
@@ -5,51 +22,83 @@ img {
     display: block;
 }
 body {
-    background-color: pink;
-    /* padding: 0; */
+    background-color:var(--bg-color);
     margin: 0;
     font-family: inter;
+    
 }
 .container {
     width: 1280px;
     background-color: blue;
+    margin-top: 93px;
     margin-left: auto;
     margin-right: auto;
 }
 .widget {
     width: 100%;
     display: grid;
-    /* grid-template-rows:178fr 210fr 266fr; */
-    /* grid-template-columns:416fr 489fr 343fr ; */
+    grid-template-rows:178fr 210fr 266fr;
+    grid-template-columns:416fr 489fr 343fr ;
     grid-template-areas: 
     "weather news news"
     "today news news"
     "email quote feeling";
-    row-gap: 16px;
-    column-gap: 16px;
+    row-gap: var(--b-radius);
+    column-gap: var(--b-radius);
+}
+
+/* weather part */
+.weather, .today, .email, .feeling, .quote, .news {
+    border-radius: var(--b-radius);
+    background-color: var(--bg-sections);
+    padding: var(--b-radius);
+    border: 1px solid black;
 }
 .weather {
-    border: 1px solid black;
     grid-area: weather;
-    /* height: 50vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+.weather h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-h1);
+    line-height: var(--font-height-h1);
+
+    color: var(--font-color);
+    margin-top:0 ;
+    margin-bottom: 0;
+}
+.weather-today, .loc {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: var(--font-size-sub);
+    line-height:var(--font-height-sub) ;
+    color: var(--font-color-sub);
+}
+.weather .temp {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-h1);
+    line-height: var(--font-height-h1);
+    color: var(--font-color);
+    margin-top: 42px;
+    margin-bottom: 0;
+}
+
+/* today part */
 .today {
-    border: 1px solid black;
     grid-area: today;
 }
 .email {
-    border: 1px solid black;
     grid-area: email;
 }
 .feeling {
-    border: 1px solid black;
     grid-area: feeling;
 }
 .quote {
-    border: 1px solid black;
     grid-area: quote;
 }
 .news {
-    border: 1px solid black;
     grid-area: news;
+    /* width: 1000px; */
 }
