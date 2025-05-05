@@ -326,3 +326,7 @@ h2 {
 .news:has(input[id="Crypto"]:checked) .hero p:nth-of-type(1) {
     display: none;
 }
+
+@media (width<=430px) {
+    
+}
